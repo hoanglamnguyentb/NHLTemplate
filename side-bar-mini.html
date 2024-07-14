@@ -1,0 +1,379 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <style>
+      body {
+        margin: 0;
+      }
+      .sidenav {
+        height: 100vh;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        border-right: 1px solid #dee2e6;
+        transition: 0.5s;
+        padding-top: 60px;
+        padding: 0;
+      }
+
+      .main-header {
+        border-bottom: 1px solid #dee2e6;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .bar1,
+      .bar2,
+      .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+
+      .change .bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+      }
+
+      .change .bar2 {
+        opacity: 0;
+      }
+
+      .change .bar3 {
+        transform: translate(0, -11px) rotate(45deg);
+      }
+
+      .accordion {
+        width: 100%;
+        position: relative;
+      }
+
+      .accordion-header {
+        border-radius: 10px;
+        padding: 5px 10px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .accordion.active .accordion-header {
+        background: #f2f2f2;
+      }
+
+      .accordion:hover .accordion-header {
+        background-color: #f2f2f2;
+      }
+
+      .accordion-title {
+        width: 100%;
+        margin-left: 5px;
+      }
+
+      .accordion .accordion-icon {
+        width: min-content;
+        transition: transform 0.3s ease;
+      }
+
+      .accordion.open .accordion-icon {
+        transform: rotate(180deg);
+      }
+
+      .panel {
+        padding-left: 18px;
+        background-color: white;
+        overflow: hidden;
+      }
+
+      .accordion-body {
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      .main-panel {
+        transition: 0.5s;
+      }
+
+      .panel a {
+        display: block;
+        padding: 8px;
+        border-radius: 10px;
+        text-decoration: none;
+      }
+
+      .panel a.active {
+        background: linear-gradient(
+          270deg,
+          rgba(42, 134, 187, 0.7) 0%,
+          #2a86bb 100%
+        ) !important;
+        color: #fff;
+      }
+
+      .panel a:hover {
+        background-color: #f2f2f2;
+      }
+
+      .accordion-main-icon img {
+        width: 32px;
+        height: 32px;
+        border-radius: 32px;
+      }
+
+      .sidenav-body {
+        overflow-y: auto;
+        height: calc(100vh -100px);
+        padding: 10px 5px;
+      }
+
+      /* width */
+      .sidenav-body::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      /* Track */
+      .sidenav-body::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 5px;
+      }
+
+      /* Handle */
+      .sidenav-body::-webkit-scrollbar-thumb {
+        background: #d9d9d9;
+        border-radius: 5px;
+      }
+
+      /* Handle on hover */
+      .sidenav-body::-webkit-scrollbar-thumb:hover {
+        background: #d9d9d9;
+      }
+
+      .mini-menu .accordion-body {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 250px;
+      }
+
+      .mini-menu .accordion-icon,
+      .mini-menu .accordion-title {
+        display: none;
+      }
+
+      .mini-menu .sidenav-body {
+        overflow-y: visible;
+        height: calc(100vh -100px);
+        padding: 10px 5px;
+      }
+
+      .sidenav .logo .logo-img img {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+      }
+
+      .sidenav .logo {
+        padding: 10px 0;
+      }
+
+      .mini-menu .panel {
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        padding: 0;
+      }
+
+      .mini-menu .logo-title {
+        display: none;
+      }
+
+      .home-btn-hamburger {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav" style="width: 250px">
+      <div class="logo">
+        <div class="text-center logo-img">
+          <img src="./assets/images/logo.png" alt="" />
+        </div>
+        <div class="logo-title">Nguyễn Hoàng Lam</div>
+      </div>
+      <div class="sidenav-body">
+        <div class="accordion">
+          <div class="accordion-header">
+            <div class="accordion-main-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/619/619032.png"
+                alt=""
+              />
+            </div>
+            <div class="accordion-title">Dashboard</div>
+            <div class="accordion-icon"></div>
+          </div>
+          <div class="accordion-body"></div>
+        </div>
+        <div class="accordion active open">
+          <div class="accordion-header">
+            <div class="accordion-main-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/619/619032.png"
+                alt=""
+              />
+            </div>
+            <div class="accordion-title">Home</div>
+            <div class="accordion-icon">
+              <i class="bi bi-chevron-down"></i>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <div class="panel">
+              <a href="" class="active">1</a>
+              <a href="">2</a>
+              <a href="">3</a>
+              <a href="">4</a>
+              <a href="">5</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <div class="accordion-main-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/619/619032.png"
+                alt=""
+              />
+            </div>
+            <div class="accordion-title">About</div>
+            <div class="accordion-icon">
+              <i class="bi bi-chevron-down"></i>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <div class="panel">
+              <a href="" class="active">1</a>
+              <a href="">2</a>
+              <a href="">3</a>
+              <a href="">4</a>
+              <a href="">5</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <div class="accordion-main-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/619/619032.png"
+                alt=""
+              />
+            </div>
+            <div class="accordion-title">Menu</div>
+            <div class="accordion-icon">
+              <i class="bi bi-chevron-down"></i>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <div class="panel">
+              <a href="" class="active">1</a>
+              <a href="">2</a>
+              <a href="">3</a>
+              <a href="">4</a>
+              <a href="">5</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-panel" id="mainPanel" style="margin-left: 250px">
+      <div class="main-header">
+        <div class="main-header-left">
+          <div class="container" onclick="toggleNav()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+        </div>
+        <div class="main-header-right">2</div>
+      </div>
+      <div class="main-content"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      function toggleNav() {
+        var $sidenav = $('#mySidenav');
+        var $mainPanel = $('#mainPanel');
+        var sidenavWidth = $sidenav.css('width');
+        if (sidenavWidth === '250px') {
+          // Sidebar is open, so close it
+          $sidenav.css('width', '60px');
+          $mainPanel.css('margin-left', '60px');
+        } else {
+          // Sidebar is closed, so open it
+          $sidenav.css('width', '250px');
+          $mainPanel.css('margin-left', '250px');
+        }
+
+        $sidenav.toggleClass('mini-menu');
+        // Remove 'open' class from accordions when mini-menu is applied
+        if ($sidenav.hasClass('mini-menu')) {
+          $acc.removeClass('open');
+          $acc.find('.accordion-body').css('max-height', 0);
+        }
+      }
+
+      var $acc = $('.accordion');
+
+      function closeAllAccordions(exceptThis) {
+        $acc.each(function () {
+          if (this !== exceptThis) {
+            $(this).removeClass('open');
+            $(this).find('.accordion-body').css('max-height', 0);
+          }
+        });
+      }
+
+      $acc.on('click', function () {
+        var isOpen = $(this).hasClass('open');
+        closeAllAccordions(this);
+        if (isOpen) {
+          $(this).removeClass('open');
+          $(this).find('.accordion-body').css('max-height', 0);
+        } else {
+          $(this).addClass('open');
+          $(this)
+            .find('.accordion-body')
+            .css(
+              'max-height',
+              $(this).find('.accordion-body')[0].scrollHeight + 'px'
+            );
+        }
+      });
+
+      // Mở các accordion có class 'open' khi tải trang
+      $acc.each(function () {
+        if ($(this).hasClass('open')) {
+          $(this).addClass('active');
+          $(this)
+            .find('.accordion-body')
+            .css(
+              'max-height',
+              $(this).find('.accordion-body')[0].scrollHeight + 'px'
+            );
+        }
+      });
+    </script>
+  </body>
+</html>

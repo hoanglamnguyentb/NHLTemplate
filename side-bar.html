@@ -1,0 +1,270 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <style>
+      body {
+        margin: 0;
+      }
+      .sidenav {
+        height: 100vh;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        border-right: 1px solid #dee2e6;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        padding: 10px 0;
+      }
+
+      .sidenav-body {
+        padding: 10px 5px;
+      }
+
+      .main-header {
+        border-bottom: 1px solid #dee2e6;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .bar1,
+      .bar2,
+      .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+
+      .change .bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+      }
+
+      .change .bar2 {
+        opacity: 0;
+      }
+
+      .change .bar3 {
+        transform: translate(0, -11px) rotate(45deg);
+      }
+
+      .accordion {
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+        padding: 5px 10px;
+        font-weight: bold;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        gap: 10px;
+      }
+
+      .accordion.active {
+        background-color: #f2f2f2;
+      }
+
+      .accordion:hover {
+        background-color: #f2f2f2;
+      }
+
+      .accordion-title {
+        width: 100%;
+      }
+
+      .accordion .accordion-icon {
+        width: min-content;
+        transition: transform 0.3s ease;
+      }
+
+      .accordion.open .accordion-icon {
+        transform: rotate(180deg);
+      }
+
+      .panel {
+        padding-left: 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+
+      .main-panel {
+        transition: 0.5s;
+      }
+
+      .panel a {
+        display: block;
+        padding: 8px;
+        border-radius: 10px;
+        text-decoration: none;
+      }
+
+      .panel a.active {
+        background: linear-gradient(to right, #005aa7, #fffde4);
+        color: #fff;
+      }
+
+      .panel a:hover {
+        background-color: #f2f2f2;
+      }
+
+      .accordion-main-icon img {
+        width: 32px;
+        height: 32px;
+        border-radius: 32px;
+      }
+
+      .sidenav-body {
+        overflow-y: auto;
+        height: calc(100vh -100px);
+      }
+
+      /* width */
+      .sidenav-body::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      /* Track */
+      .sidenav-body::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 5px;
+      }
+
+      /* Handle */
+      .sidenav-body::-webkit-scrollbar-thumb {
+        background: #d9d9d9;
+        border-radius: 5px;
+      }
+
+      /* Handle on hover */
+      .sidenav-body::-webkit-scrollbar-thumb:hover {
+        background: #d9d9d9;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <div>Hello Việt Nam</div>
+      <div class="sidenav-body">
+        <button class="accordion active open">
+          <div class="accordion-main-icon">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/619/619032.png"
+              alt=""
+            />
+          </div>
+          <div class="accordion-title">Home</div>
+          <div class="accordion-icon">
+            <i class="bi bi-chevron-down"></i>
+          </div>
+        </button>
+        <div class="panel">
+          <a href="" class="active">1</a>
+          <a href="">2</a>
+          <a href="">3</a>
+          <a href="">4</a>
+          <a href="">5</a>
+        </div>
+
+        <button class="accordion">About</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+
+        <button class="accordion">Info</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <button class="accordion">Contact</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-panel" id="mainPanel" style="margin-left: 250px">
+      <div class="main-header">
+        <div class="main-header-left">
+          <div class="container" onclick="toggleNav()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+        </div>
+        <div class="main-header-right">2</div>
+      </div>
+      <div class="main-content"></div>
+    </div>
+    <script>
+      function toggleNav() {
+        var sidenavWidth = document.getElementById('mySidenav').style.width;
+        if (sidenavWidth === '250px') {
+          // Sidebar is open, so close it
+          document.getElementById('mySidenav').style.width = '0';
+          document.getElementById('mainPanel').style.marginLeft = '0';
+        } else {
+          // Sidebar is closed, so open it
+          document.getElementById('mySidenav').style.width = '250px';
+          document.getElementById('mainPanel').style.marginLeft = '250px';
+        }
+      }
+
+      var acc = document.getElementsByClassName('accordion');
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener('click', function () {
+          this.classList.toggle('open');
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+          }
+        });
+      }
+      // Mở các accordion có class 'open'
+      window.onload = function () {
+        for (i = 0; i < acc.length; i++) {
+          if (acc[i].classList.contains('open')) {
+            acc[i].classList.add('active');
+            var panel = acc[i].nextElementSibling;
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

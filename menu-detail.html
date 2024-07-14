@@ -1,0 +1,459 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
+    <title>Nguyễn Hoàng Lam | Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <style>
+      .bar1,
+      .bar2,
+      .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #fff;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+
+      .change .bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+      }
+
+      .change .bar2 {
+        opacity: 0;
+      }
+
+      .change .bar3 {
+        transform: translate(0, -11px) rotate(45deg);
+      }
+
+      .menu-detail-btn {
+        cursor: pointer;
+      }
+
+      .menu-detail {
+        position: absolute;
+        top: 56px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh- 142.5px);
+        overflow: hidden;
+        display: none;
+        height: calc(100vh);
+      }
+
+      .menu-detail .menu-detail-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.5;
+        z-index: -1;
+      }
+
+      .menu-detail-body {
+        background: #fff;
+      }
+
+      .menu-detail-body {
+        padding: 25px;
+      }
+
+      .menu-items-title {
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+      }
+
+      .sub-menu li:not(:last-child) {
+        margin: 0 0 15px;
+      }
+
+      .menu-items-inner .sub-menu {
+        max-height: 315px;
+        overflow-y: auto;
+        padding: 0 2px 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Star Header -->
+    <div class="container-fluid header-top">
+      <div class="container">
+        <div class="d-flex align-items-center gap-3">
+          <div class="logo">
+            <div class="text-center logo-img">
+              <img src="./assets/images/logo.png" alt="" />
+            </div>
+            <div class="logo-title">Nguyễn Hoàng Lam</div>
+          </div>
+          <div class="header-top-title">Nguyễn Hoàng Lam</div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid bg-dark header-bottom">
+      <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="javascript:void(0)">NHL</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mynavbar"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+              <!-- Menu Detail -->
+              <div class="menu-detail-btn" onclick="toggleMenuDetail()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+              <!-- Menu Detail -->
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    >Dropdown</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Link</a></li>
+                    <li><a class="dropdown-item" href="#">Another link</a></li>
+                    <li><a class="dropdown-item" href="#">A third link</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)"
+                    ><i class="bi bi-person-fill"></i> Đăng ký</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)"
+                    ><i class="bi bi-box-arrow-in-right"></i> Đăng nhập</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- Menu Detail -->
+      <div class="menu-detail">
+        <div class="menu-detail-body">
+          <div class="menu-detail-items">
+            <div class="container">
+              <div class="row gap-5 flex-nowrap">
+                <div class="col-4">
+                  <div class="menu-items-inner">
+                    <header class="menu-items-title">Tin tức trong ngày</header>
+                    <ul
+                      style="max-height: 190px !important"
+                      class="sub-menu sub-menu-scroll"
+                    >
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="menu-items-inner">
+                    <header class="menu-items-title">Tin tức trong ngày</header>
+                    <ul
+                      style="max-height: 190px !important"
+                      class="sub-menu sub-menu-scroll"
+                    >
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="menu-items-inner">
+                    <header class="menu-items-title">Tin tức trong ngày</header>
+                    <ul
+                      style="max-height: 190px !important"
+                      class="sub-menu sub-menu-scroll"
+                    >
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-detail-items">
+            <div class="container">
+              <div class="row gap-5 flex-nowrap">
+                <div class="col-4">
+                  <div class="menu-items-inner">
+                    <header class="menu-items-title">Tin tức trong ngày</header>
+                    <ul
+                      style="max-height: 190px !important"
+                      class="sub-menu sub-menu-scroll"
+                    >
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="menu-items-inner">
+                    <header class="menu-items-title">Tin tức trong ngày</header>
+                    <ul
+                      style="max-height: 190px !important"
+                      class="sub-menu sub-menu-scroll"
+                    >
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="menu-items-inner">
+                    <header class="menu-items-title">Tin tức trong ngày</header>
+                    <ul
+                      style="max-height: 190px !important"
+                      class="sub-menu sub-menu-scroll"
+                    >
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                      <li>
+                        <a href="#"> Chính trị - Xã hội </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-detail-backdrop"></div>
+      </div>
+      <!-- Menu Detail -->
+    </div>
+    <!-- End Header -->
+
+    <!-- Start Body -->
+    <div class="container-fluid">
+      <div class="container">
+        <div class="body" style="min-height: 200vh">
+          ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+          labore, beatae officia similique corporis, iusto voluptatem ut esse
+          doloremque dignissimos distinctio delectus repellat doloribus vero
+          molestias minus laborum hic itaque?
+        </div>
+      </div>
+    </div>
+    <!-- End Body -->
+    <!-- Start Footer -->
+    <div class="container-fluid bg-dark footer">
+      <div class="container">
+        <div class="footer-title">
+          Made with
+          <span class="text-pink"><i class="bi bi-heart-fill"></i></span> by
+          <a href="/">Nguyễn Hoàng Lam</a>
+        </div>
+      </div>
+    </div>
+    <!-- End Footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+  <script>
+    function toggleMenuDetail() {
+      $('.menu-detail').slideToggle();
+    }
+  </script>
+</html>
